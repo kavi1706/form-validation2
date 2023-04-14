@@ -1,0 +1,58 @@
+<html>
+    <head>
+        
+        <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+        <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
+    </head>
+    <body class="bg-info">
+        
+                        <form name="myform" action="index11.html" method="get" name="myform"onsubmit="return validate()">
+                            <b>Name:</b> <input type="text" name="name" id="nn" > <br><br>
+                            
+                            
+                            
+                            <b>Mail:</b> <input type="text" id="e" name="email"> <br><br>
+                           
+                           <input type="submit" value="SUBMIT" class="btn btn-danger">
+        
+                      </form>
+
+                
+        
+        <script type="text/javascript">
+           function validate()
+           {
+             var name=document.getElementById("nn").value;
+            
+            var n1=/^([A-Z])+\.[A-Z]*$/;
+            var result=n1.test(name);
+        
+            if(!result)
+            {
+                alert("please check your name");
+        
+                return false;
+                
+            }
+           
+            
+                var e=document.getElementById("e").value;
+                let e1=/^([a-z])+([a-z0-9])*\@([A-Za-z0-9\.])+\.([A-Za-z]{2,4})$/;
+                var e2=e1.test(e);
+            if(!e2)
+            {
+                    alert("enter valid mail");
+                    document.myform.email.focus();
+                    return false;
+            }
+           alert("your form was submitted");
+            
+          }
+            
+            
+
+           
+        </script>
+
+    </body>
+</html>
